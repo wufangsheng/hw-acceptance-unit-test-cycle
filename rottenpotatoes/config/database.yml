@@ -27,8 +27,6 @@
 # cucumber:
 #   <<: *test
 
-
-
 default: &default
   adapter: postgresql
   encoding: unicode

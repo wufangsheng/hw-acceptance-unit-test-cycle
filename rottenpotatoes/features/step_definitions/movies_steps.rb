@@ -1,3 +1,4 @@
+
 Given /the following movies exist/ do |movies_table|
   movies_table.hashes.each do |movie|
     Movie.create movie
@@ -22,7 +23,8 @@ Then /I should see all the movies/ do
     step %{I should see "#{movie.title}"}
   end
 end
-
-Then(/^the director of "([^"]*)" should be "([^"]*)"$/) do |arg1, arg2|
-  # Write code here that turns the phrase above into concrete actions
+Then(/^the director of "([^"]*)" should be "([^"]*)"$/) do |movie, director|
+  page.should have_content(movie)
+  page.should have_content(director)
 end
+
